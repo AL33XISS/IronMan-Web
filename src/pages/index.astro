@@ -1,11 +1,74 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Footer from "../components/Footer.astro";
+import Peliculas from "../components/Peliculas.astro";
+import Separador from "../components/Separador.astro";
+import Series from "../components/Series.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<section id="hero" class="flex justify-center items-center h-screen">
+		<img
+			src="iron-man-hero.png"
+			class="h-80 animate-pulse hover:scale-105 transition-transform duration-300 lg:h-120"
+			alt="Iron Man"
+		/>
+	</section>
+
+	<section class="flex justify-center items-center py-20">
+		<div
+			class="flex justify-center p-5 border-2 border-white rounded-2xl shadow-2xl shadow-white w-10/12"
+		>
+			<p class="text-white text-2xl md:text-3xl">
+				Iron Man, cuyo alter ego es Tony Stark, es un genio,
+				multimillonario, playboy y filántropo que utiliza una armadura
+				tecnológicamente avanzada para luchar contra el crimen y
+				proteger al mundo. La armadura le otorga fuerza sobrehumana,
+				vuelo y una variedad de armas y sistemas de soporte vital.
+			</p>
+		</div>
+	</section>
+
+	<Separador />
+
+	<section id="peliculas" class="flex flex-col justify-center items-center">
+		<h1 class="text-3xl text-white">Peliculas en las que aparece</h1>
+		<p class="text-2xl text-white mb-8">UCM ORIGINAL</p>
+
+		<Peliculas />
+	</section>
+
+	<section id="series"
+		class="relative flex flex-col justify-center items-center bg-cover mt-20"
+	>
+		<div
+			class="absolute inset-0 w-full h-full bg-[url(/bg-scomic.jpg)] bg-cover bg-center mask-y-to-100% pointer-events-none"
+		>
+		</div>
+
+		<div
+			class="relative z-10 flex flex-col justify-center items-center w-10/12"
+		>
+			<h1 class="text-3xl text-white">Series en las que aparece</h1>
+			<p class="text-2xl text-white mb-8">UCM ORIGINAL</p>
+
+			<div
+				class="flex flex-col justify-center p-5 border-4 border-white rounded-2xl shadow-2xl shadow-white"
+			>
+				<p class="text-2xl text-white">
+					Iron Man aparece principalmente en películas y videojuegos,
+					no tanto en series. Pero podemos destacar su aparición en 2
+					series animadas:
+				</p>
+			</div>
+
+			<Series />
+		</div>
+	</section>
+
+	<Separador />
+
+	<section class="mt-50">
+		<Footer />
+	</section>
 </Layout>

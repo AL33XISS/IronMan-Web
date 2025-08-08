@@ -1,0 +1,39 @@
+---
+import Card from "./Card.astro";
+
+const SERIES = [
+    {
+        name: "Iron Man (Ironman)",
+        year: 1994,
+        rating: 5.0,
+        image: "/series/iron-man-s1.jpg",
+        platform: "disney",
+    },
+    {
+        name: "Iron Man: Armored Adventures (Ironman)",
+        year: 2009,
+        rating: 4.7,
+        image: "/series/iron-man-s2.jpg",
+        platform: "netflix",
+    },
+];
+---
+
+<div id="serie" class="w-1/2 grid lg:grid-cols-4 gap-7 justify-center mt-8">
+    {SERIES.map((serie) => <Card {...serie} />)}
+</div>
+
+
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from("#serie", {
+        x: 250,
+        duration: 4,
+        scrollTrigger: "#serie",
+    });
+</script>

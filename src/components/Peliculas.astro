@@ -1,0 +1,95 @@
+---
+import Card from "./Card.astro";
+
+const MOVIES = [
+    {
+        name: 'Iron Man',
+        year: 2008,
+        rating: 6.6,
+        image: '/movies/iron-man-m1.jpg',
+        platform: 'disney'
+    },
+    {
+        name: 'Iron Man 2',
+        year: 2010,
+        rating: 5.9,
+        image: '/movies/iron-man-m2.jpg',
+        platform: 'disney'
+    },
+    {
+        name: 'Iron Man 3',
+        year: 2013,
+        rating: 6.1,
+        image: '/movies/iron-man-m3.jpg',
+        platform: 'disney'
+    },
+    {
+        name: 'The Avengers',
+        year: 2012,
+        rating: 6.9,
+        image: '/movies/iron-man-m4.jpg',
+        platform: 'disney'
+    },
+    {
+        name: 'Avengers: Era de Ultrón',
+        year: 2015,
+        rating: 6.3,
+        image: '/movies/iron-man-m5.jpg',
+        platform: 'disney'
+    },
+    {
+        name: 'Capitán América: Civil War',
+        year: 2016,
+        rating: 6.8,
+        image: '/movies/iron-man-m6.jpg',
+        platform: 'disney'
+    },
+    {
+        name: 'Spider-Man: Homecoming',
+        year: 2017,
+        rating: 6.3,
+        image: '/movies/iron-man-m7.jpg',
+        platform: 'disney'
+    },
+    {
+        name: 'Avengers: Infinity War',
+        year: 2018,
+        rating: 7.5,
+        image: '/movies/iron-man-m8.jpg',
+        platform: 'disney'
+    },
+    {
+        name: 'Avengers: Endgame',
+        year: 2019,
+        rating: 7.3,
+        image: '/movies/iron-man-m9.jpg',
+        platform: 'disney'
+    }
+];
+---
+
+<div id="pelicula" class="w-1/2 grid lg:grid-cols-4 gap-7 justify-center mt-8">
+    {MOVIES.map(movie => (
+        <Card {...movie} />
+    ))}
+</div>
+
+
+
+<script>
+
+
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+    gsap.from("#pelicula", {
+        x: 250,
+        duration: 4,
+        scrollTrigger: "#pelicula"
+    })
+
+</script>
